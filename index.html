@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="icon.png" />
+    <title>Document</title>
+    <style>
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50.3%);
+        }
+      }
+      .imgcont {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 60px;
+      }
+      .imgcont > img {
+        max-width: 70px;
+        max-height: 70px;
+      }
+      #techs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        gap: 30px;
+        animation: marquee 25s infinite linear reverse;
+      }
+      #main {
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"><div id="techs"></div></div>
+
+    <script>
+      let imgs = [
+        "appsscript.png",
+        "cpp.png",
+        "java.png",
+        "photoshop.png",
+        "aws.png",
+        "docker.png",
+        "mongo.png",
+        "powerbi.png",
+        "bash.png",
+        "electron.png",
+        "mysql.png",
+        "python.png",
+        "bind9.png",
+        "git.png",
+        "nginx.png",
+        "react.png",
+        "c.png",
+        "github.png",
+        "nodejs.png",
+        "tableau.png",
+        "chrome.png",
+        "htmlcssjs.png",
+        "oracle.png",
+        "ubuntu.png",
+      ];
+
+      function _ci(src) {
+        let n = document.createElement("div");
+        n.classList.add("imgcont");
+        let i = new Image();
+        i.src = "imgs/" + src;
+        n.appendChild(i);
+        document.querySelector("#techs").appendChild(n);
+      }
+
+      for (let i = 0; i < 2; i++) {
+        for (let img of imgs) {
+          _ci(img);
+        }
+      }
+    </script>
+  </body>
+</html>
